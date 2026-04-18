@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ainanocat | Calm Portfolio</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="home">
+  <div class="container">
+    <div id="navbar"></div>
+
+    <main>
+      <section class="hero">
+        <p class="hero-sub" data-i18n="heroSub"></p>
+        <h1 class="hero-title" data-i18n-html="heroTitle"></h1>
+        <p class="hero-desc" data-i18n="heroDesc"></p>
+      </section>
+
+      <section>
+        <h2 class="section-title" data-i18n="featureTitle"></h2>
+        <div class="cards">
+          <article class="card">
+            <h3 data-i18n="card1Title"></h3>
+            <p data-i18n="card1Desc"></p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="card2Title"></h3>
+            <p data-i18n="card2Desc"></p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="card3Title"></h3>
+            <p data-i18n="card3Desc"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="message-board">
+        <h2 class="section-title" data-i18n="boardTitle"></h2>
+        <p class="board-desc" data-i18n="boardDesc"></p>
+        <form class="message-form" id="messageForm">
+          <input class="input" id="nameInput" maxlength="30" />
+          <textarea class="input" id="messageInput" rows="1" maxlength="240"></textarea>
+          <button class="submit-btn" type="submit" data-i18n="submitBtn"></button>
+        </form>
+        <p class="error-text" id="errorText"></p>
+        <ul class="message-list" id="messageList"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <span data-i18n="footerLeft"></span>
+      <span data-i18n="footerRight"></span>
+    </footer>
+  </div>
+
+  <script src="./navbar.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
