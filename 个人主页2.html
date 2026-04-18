@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to a calmer space · 个人简约</title>
+    <!-- 干净、现代、类似 Zen Browser 的简约风格 -->
+    <style>
+        /* 全局重置与基调 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0b0e14;   /* 深邃底色，类似 zen 的沉稳感 */
+            font-family: system-ui, -apple-system, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #e9edf2;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 整体容器：最大宽度、居中，有呼吸感 */
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        /* 标题区 — 类似 “welcome to / a calmer internet” 的干净处理 */
+        .hero {
+            margin-bottom: 5rem;
+        }
+
+        .hero-eyebrow {
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: #a0aaba;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-main {
+            font-size: 5rem;
+            font-weight: 550;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-main span {
+            background: linear-gradient(135deg, #c5b3ff 0%, #a7c6ff 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.3rem;
+            max-width: 720px;
+            color: #b7c0cd;
+            margin-bottom: 1rem;
+        }
+
+        .hero-note {
+            color: #8892a5;
+            font-size: 1.1rem;
+            border-left: 3px solid #4f5b73;
+            padding-left: 1.3rem;
+            margin-top: 1.2rem;
+        }
+
+        /* 特性网格 — 类似 Workspaces / Compact Mode 卡片区 */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 2.5rem;
+            color: #f0f3f8;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        /* 卡片 — 毛玻璃/半透明简约感，类似 zen 的质感 */
+        .feature-card {
+            background: rgba(22, 28, 36, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            padding: 2rem 2rem 1.8rem;
+            transition: transform 0.25s ease, border-color 0.2s;
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card:hover {
+            border-color: rgba(180, 200, 255, 0.2);
+            transform: translateY(-4px);
+            background: rgba(28, 36, 46, 0.75);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .feature-card p {
+            color: #b1bed5;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 0.25rem;
+        }
+
+        /* 特殊的引用/额外描述 — 模仿 "Organize your tabs..." 的重复但有意义的呈现 */
+        .feature-note {
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #9dabc0;
+        }
+
+        /* 赞助商 & 核心价值观 — 类似原站的结构 */
+        .sponsor-section {
+            margin: 5rem 0 4rem;
+            background: rgba(18, 24, 32, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 3rem 3rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .sponsor-title {
+            font-size: 1.8rem;
+            font-weight: 450;
+            margin-bottom: 1.5rem;
+        }
+
+        .sponsor-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem 4rem;
+            align-items: center;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .sponsor-item {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.8;
+            color: #d3def0;
+            letter-spacing: -0.01em;
+        }
+
+        .donate-cta {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .donate-cta a {
+            color: #b8c7ff;
+            text-decoration: none;
+            border-bottom: 1.5px solid #5f7cbf;
+            padding-bottom: 2px;
+            transition: color 0.2s;
+        }
+
+        .donate-cta a:hover {
+            color: #ffffff;
+            border-bottom-color: #a3baff;
+        }
+
+        .values-title {
+            font-size: 2.2rem;
+            font-weight: 480;
+            margin: 3.5rem 0 1.8rem;
+            letter-spacing: -0.02em;
+        }
+
+        .values-text {
+            font-size: 1.5rem;
+            max-width: 900px;
+            color: #ccd9f0;
+            background: rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            border-radius: 20px;
+        }
+
+        /* 底部区域 */
+        .footer-note {
+            margin-top: 6rem;
+            color: #6e7d98;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-note a {
+            color: #b0bedb;
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            color: white;
+        }
+
+        /* 响应式：移动端优雅降级 */
+        @media (max-width: 720px) {
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero-main {
+                font-size: 3.5rem;
+            }
+            .hero-desc {
+                font-size: 1.1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .sponsor-section {
+                padding: 2rem 1.5rem;
+            }
+            .values-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* 链接一般样式 */
+        a {
+            color: inherit;
+        }
+
+        /* 简单点缀，让“Compact Mode”等看起来自然 */
+        .badge {
+            display: inline-block;
+            background: #2c384b;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.9rem;
+            color: #bfd1ff;
+            margin-top: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- HERO 部分: welcome to a calmer ... 个人简约版 -->
+        <section class="hero">
+            <div class="hero-eyebrow">welcome to</div>
+            <div class="hero-main">
+                a calmer <span>space</span>
+            </div>
+            <div class="hero-desc">
+                Beautifully designed, privacy-focused, and packed with thoughtful details.<br>
+                We care about your experience, not your data.
+            </div>
+            <div class="hero-note">
+                Productivity at its best · 个人简约 · 像呼吸一样自然
+            </div>
+        </section>
+
+        <!-- 主要功能区块 — 类似 Workspaces / Compact Mode / Glance / Split View -->
+        <h2 class="section-title">features that keep you focused</h2>
+        <div class="feature-grid">
+            <!-- 卡片 1: Workspaces -->
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Workspaces</h3>
+                <p>Organize your projects into separate Workspaces. Keep contexts clean and switch between them with ease — no clutter, just flow.</p>
+                <div class="feature-note">
+                    <span class="badge">effortless context</span>
+                </div>
+            </div>
+            <!-- 卡片 2: Compact Mode -->
+            <div class="feature-card">
+                <div class="feature-icon">🪶</div>
+                <h3>Compact Mode</h3>
+                <p>Gives you more screen real estate by hiding the tab bar when you don't need it. It appears only when you want — minimal and smart.</p>
+                <div class="feature-note">
+                    <span class="badge">distraction‑free</span>
+                </div>
+            </div>
+            <!-- 卡片 3: Glance -->
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Glance</h3>
+                <p>Quickly switch between your most‑used tabs without scrolling through history. A faster way to jump between thoughts.</p>
+                <div class="feature-note">
+                    <span class="badge">speed of thought</span>
+                </div>
+            </div>
+            <!-- 卡片 4: Split View -->
+            <div class="feature-card">
+                <div class="feature-icon">◫</div>
+                <h3>Split View</h3>
+                <p>View two tabs side by side — compare, reference, and multitask without losing your place. Split your screen, not your attention.</p>
+                <div class="feature-note">
+                    <span class="badge">side‑by‑side clarity</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 重复那句 "Organize your tabs into Workspaces..." 但用更清新的方式 -->
+        <div style="margin: -0.5rem 0 3rem 0; font-size: 1.2rem; color: #aebcd6; font-style: italic;">
+            “Organize your tabs into Workspaces to keep your projects separate and organized, and switch between them with ease.”
+        </div>
+
+        <!-- 赞助商 & 核心价值观 —— 完全保留原有情感，但转为个人/简约调性 -->
+        <div class="sponsor-section">
+            <div class="sponsor-title">✨ Our Sponsors</div>
+            <p style="color: #b8c5de; margin-bottom: 0.5rem; font-size: 1.1rem;">
+                We are grateful to our sponsors for their support. They help us to keep the project alive.
+            </p>
+            <div class="sponsor-list">
+                <div class="sponsor-item">calm.capital</div>
+                <div class="sponsor-item">focuslab</div>
+                <div class="sponsor-item">minimal.studio</div>
+                <div class="sponsor-item">quiet.ventures</div>
+            </div>
+            <div class="donate-cta">
+                You can also be part of this journey — <a href="#">donate to us directly →</a>
+            </div>
+
+            <!-- 核心价值观 -->
+            <h2 class="values-title">Our Core Values</h2>
+            <div class="values-text">
+                We make it not only a priority, but a necessity to ensure that <strong>calm</strong> always strikes the right balance between beauty, performance, and privacy.
+            </div>
+            <!-- 附加一句原站精神 -->
+            <p style="margin-top: 2rem; color: #a2b3d1;">Beautifully designed, privacy-focused, and packed with features — just for you.</p>
+        </div>
+
+        <!-- 简约脚注，类似网站底部的隐私/体验声明 -->
+        <footer class="footer-note">
+            <div>© 2026 · calmer personal space</div>
+            <div>
+                <a href="#">privacy</a> &nbsp;·&nbsp; 
+                <a href="#">experience</a> &nbsp;·&nbsp; 
+                <a href="#">balance</a>
+            </div>
+            <div>we care about your experience, not your data</div>
+        </footer>
+    </div>
+
+    <!-- 无需额外 JavaScript — 保持静态、快速、干净 -->
+</body>
+</html>
