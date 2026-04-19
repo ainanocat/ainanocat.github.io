@@ -1,77 +1,40 @@
 const TEXT = {
-  zh: {
-    navHome: "首页",
-    navAbout: "关于",
-    navContact: "联系",
-    heroSub: "welcome to",
-    heroTitle: "一个更平静的 <span class=\"gradient\">数字空间</span>",
-    heroDesc: "ainanocat 的个人网站。用于展示作品、服务与思考，用更克制的视觉，保持专注与呼吸感。",
-    featureTitle: "精选内容",
-    card1Title: "作品展示",
-    card1Desc: "放置你的设计、开发或内容项目。每个作品只保留关键价值，不制造信息噪音。",
-    card2Title: "服务能力",
-    card2Desc: "清晰列出你能提供的服务：网站开发、品牌视觉、咨询支持或长期协作。",
-    card3Title: "合作方式",
-    card3Desc: "简化沟通流程：先留言，再交流，再开始。平稳、透明、可持续。",
-    boardTitle: "留言板",
-    boardDesc: "欢迎留下合作意向、建议或一句问候。留言将保存在当前浏览器中。",
-    namePlaceholder: "你的名字",
-    messagePlaceholder: "写下你的留言...",
-    submitBtn: "发布",
-    emptyMessage: "还没有留言，来留下第一条吧。",
-    errorRequired: "请填写名字和留言内容。",
-    aboutTitle: "关于我",
-    aboutIntro: "我专注于构建干净、轻量、可持续的数字体验。",
-    aboutList1: "视觉表达克制，内容信息清晰。",
-    aboutList2: "开发流程稳定，交付节奏可预测。",
-    aboutList3: "重视长期维护，不做短期堆砌。",
-    contactTitle: "联系我",
-    contactIntro: "如果你想合作或交流，欢迎通过以下方式联系。",
-    contactEmailLabel: "邮箱",
-    contactWeChatLabel: "微信",
-    contactGithubLabel: "GitHub",
-    footerLeft: "© 2026 ainanocat",
-    footerRight: "calm, focus, clarity"
-  },
-  en: {
-    navHome: "Home",
-    navAbout: "About",
-    navContact: "Contact",
-    heroSub: "welcome to",
-    heroTitle: "a calmer <span class=\"gradient\">digital space</span>",
-    heroDesc: "ainanocat's personal site for showcasing projects, services, and ideas with a focused, minimal visual rhythm.",
-    featureTitle: "Highlights",
-    card1Title: "Project Showcase",
-    card1Desc: "Present design, dev, or content work with only the essential value and no visual noise.",
-    card2Title: "Services",
-    card2Desc: "Clearly list what you offer: web development, visual direction, consulting, or long-term collaboration.",
-    card3Title: "Workflow",
-    card3Desc: "Keep communication simple: leave a message, talk briefly, start with clarity and calm.",
-    boardTitle: "Guestbook",
-    boardDesc: "Leave a note, collaboration idea, or quick hello. Messages are stored in this browser.",
-    namePlaceholder: "Your name",
-    messagePlaceholder: "Write your message...",
-    submitBtn: "Post",
-    emptyMessage: "No messages yet. Be the first to leave one.",
-    errorRequired: "Please enter both your name and message.",
-    aboutTitle: "About Me",
-    aboutIntro: "I focus on building clean, lightweight, and sustainable digital experiences.",
-    aboutList1: "Restrained visual style with clear information hierarchy.",
-    aboutList2: "Stable delivery process and predictable development rhythm.",
-    aboutList3: "Long-term maintainability over short-term complexity.",
-    contactTitle: "Contact",
-    contactIntro: "If you want to collaborate or chat, feel free to reach me here.",
-    contactEmailLabel: "Email",
-    contactWeChatLabel: "WeChat",
-    contactGithubLabel: "GitHub",
-    footerLeft: "© 2026 ainanocat",
-    footerRight: "calm, focus, clarity"
-  }
+  navHome: "首页",
+  navAbout: "关于",
+  navContact: "联系",
+  heroSub: "欢迎来到",
+  heroTitle: "一个更平静的 <span class=\"gradient\">数字空间</span>",
+  heroDesc: "ainanocat 的个人网站。用于展示作品、服务与思考，用更克制的视觉，保持专注与呼吸感。",
+  featureTitle: "精选内容",
+  card1Title: "作品展示",
+  card1Desc: "放置你的设计、开发或内容项目。每个作品只保留关键价值，不制造信息噪音。",
+  card2Title: "服务能力",
+  card2Desc: "清晰列出你能提供的服务：网站开发、品牌视觉、咨询支持或长期协作。",
+  card3Title: "合作方式",
+  card3Desc: "简化沟通流程：先留言，再交流，再开始。平稳、透明、可持续。",
+  boardTitle: "留言板",
+  boardDesc: "欢迎留下合作意向、建议或一句问候。留言将保存在当前浏览器中。",
+  namePlaceholder: "你的名字",
+  messagePlaceholder: "写下你的留言...",
+  submitBtn: "发布",
+  emptyMessage: "还没有留言，来留下第一条吧。",
+  errorRequired: "请填写名字和留言内容。",
+  aboutTitle: "关于我",
+  aboutIntro: "我专注于构建干净、轻量、可持续的数字体验。",
+  aboutList1: "视觉表达克制，内容信息清晰。",
+  aboutList2: "开发流程稳定，交付节奏可预测。",
+  aboutList3: "重视长期维护，不做短期堆砌。",
+  contactTitle: "联系我",
+  contactIntro: "如果你想合作或交流，欢迎通过以下方式联系。",
+  contactEmailLabel: "邮箱",
+  contactWeChatLabel: "微信",
+  contactGithubLabel: "代码仓库",
+  footerLeft: "© 2026 ainanocat",
+  footerRight: "平静、专注、清晰"
 };
 
 const STORAGE_KEY = "ainanocat_guestbook_v1";
-const LANG_KEY = "ainanocat_lang";
-let currentLang = localStorage.getItem(LANG_KEY) || "zh";
+const currentLang = "zh";
 
 function safeLoadMessages() {
   try {
@@ -96,7 +59,7 @@ function escapeHtml(value) {
 
 function formatTime(timestamp) {
   const date = new Date(timestamp);
-  return date.toLocaleString(currentLang === "zh" ? "zh-CN" : "en-US", {
+  return date.toLocaleString("zh-CN", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
@@ -115,7 +78,7 @@ function renderMessages() {
   if (data.length === 0) {
     const empty = document.createElement("li");
     empty.className = "empty";
-    empty.textContent = TEXT[currentLang].emptyMessage;
+    empty.textContent = TEXT.emptyMessage;
     messageList.appendChild(empty);
     return;
   }
@@ -132,8 +95,8 @@ function renderMessages() {
 }
 
 function applyLanguage() {
-  const locale = TEXT[currentLang];
-  document.documentElement.lang = currentLang === "zh" ? "zh-CN" : "en";
+  const locale = TEXT;
+  document.documentElement.lang = "zh-CN";
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.getAttribute("data-i18n");
@@ -147,26 +110,10 @@ function applyLanguage() {
 
   const nameInput = document.getElementById("nameInput");
   const messageInput = document.getElementById("messageInput");
-  const langSwitch = document.getElementById("langSwitch");
-
   if (nameInput) nameInput.placeholder = locale.namePlaceholder;
   if (messageInput) messageInput.placeholder = locale.messagePlaceholder;
-  if (langSwitch) langSwitch.textContent = currentLang === "zh" ? "EN" : "中文";
 
   renderMessages();
-}
-
-function initLanguageSwitch() {
-  const langSwitch = document.getElementById("langSwitch");
-  const errorText = document.getElementById("errorText");
-  if (!langSwitch) return;
-
-  langSwitch.addEventListener("click", () => {
-    currentLang = currentLang === "zh" ? "en" : "zh";
-    localStorage.setItem(LANG_KEY, currentLang);
-    if (errorText) errorText.textContent = "";
-    applyLanguage();
-  });
 }
 
 function initMessageBoard() {
@@ -182,7 +129,7 @@ function initMessageBoard() {
     const message = messageInput.value.trim();
 
     if (!name || !message) {
-      errorText.textContent = TEXT[currentLang].errorRequired;
+      errorText.textContent = TEXT.errorRequired;
       return;
     }
 
@@ -201,6 +148,16 @@ function initMessageBoard() {
   });
 }
 
-initLanguageSwitch();
-initMessageBoard();
-applyLanguage();
+function initApp() {
+  if (typeof window.renderNavbar === "function") {
+    window.renderNavbar();
+  }
+  initMessageBoard();
+  applyLanguage();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}

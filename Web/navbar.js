@@ -1,4 +1,4 @@
-(function renderNavbar() {
+function renderNavbar() {
   const mount = document.getElementById("navbar");
   if (!mount) return;
 
@@ -13,8 +13,15 @@
           <a class="nav-link ${currentPage === "about" ? "active" : ""}" href="./about.html" data-i18n="navAbout"></a>
           <a class="nav-link ${currentPage === "contact" ? "active" : ""}" href="./contact.html" data-i18n="navContact"></a>
         </nav>
-        <button class="lang-switch" id="langSwitch" type="button">EN</button>
       </div>
     </header>
   `;
-})();
+}
+
+window.renderNavbar = renderNavbar;
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", renderNavbar);
+} else {
+  renderNavbar();
+}

@@ -1,11 +1,11 @@
 :root {
   --bg: #0b0e14;
   --bg-soft: #121825;
-  --card: rgba(24, 30, 43, 0.62);
+  --card: rgba(31, 39, 57, 0.86);
   --text: #e8edf7;
   --muted: #9eabc4;
-  --line: rgba(184, 204, 255, 0.16);
-  --line-strong: rgba(184, 204, 255, 0.42);
+  --line: rgba(184, 204, 255, 0.34);
+  --line-strong: rgba(184, 204, 255, 0.62);
   --accent-1: #9ebcff;
   --accent-2: #b2a2ff;
   --danger: #f3a5a5;
@@ -147,7 +147,7 @@ body {
 
 .card {
   border-radius: 20px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   background: var(--card);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -159,7 +159,7 @@ body {
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
-  background: rgba(30, 38, 54, 0.68);
+  background: rgba(36, 46, 67, 0.92);
 }
 
 .card h3 {
@@ -176,8 +176,8 @@ body {
 
 .panel {
   border-radius: 22px;
-  border: 1px solid var(--line);
-  background: rgba(20, 27, 40, 0.55);
+  border: 1px solid var(--line-strong);
+  background: rgba(27, 35, 52, 0.84);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 22px;
@@ -208,8 +208,8 @@ button {
 .input {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid rgba(169, 188, 235, 0.24);
-  background: rgba(9, 13, 21, 0.66);
+  border: 1px solid rgba(169, 188, 235, 0.45);
+  background: rgba(8, 12, 20, 0.88);
   color: #e8eefb;
   padding: 10px 12px;
   outline: none;
@@ -217,13 +217,13 @@ button {
 }
 
 .input:focus {
-  border-color: rgba(179, 201, 255, 0.65);
+  border-color: rgba(189, 208, 255, 0.85);
 }
 
 .submit-btn {
-  border: 1px solid rgba(174, 195, 245, 0.36);
+  border: 1px solid rgba(174, 195, 245, 0.58);
   border-radius: 12px;
-  background: linear-gradient(120deg, rgba(128, 157, 245, 0.28), rgba(170, 147, 242, 0.28));
+  background: linear-gradient(120deg, rgba(128, 157, 245, 0.44), rgba(170, 147, 242, 0.44));
   color: #ecf2ff;
   padding: 0 16px;
   cursor: pointer;
@@ -232,7 +232,7 @@ button {
 
 .submit-btn:hover {
   transform: translateY(-1px);
-  border-color: rgba(197, 213, 255, 0.62);
+  border-color: rgba(197, 213, 255, 0.88);
 }
 
 .error-text {
@@ -248,10 +248,10 @@ button {
 }
 
 .message-item {
-  border: 1px solid rgba(169, 188, 235, 0.2);
+  border: 1px solid rgba(169, 188, 235, 0.42);
   border-radius: 14px;
   padding: 12px;
-  background: rgba(10, 14, 23, 0.54);
+  background: rgba(12, 16, 27, 0.84);
   display: grid;
   gap: 4px;
 }
@@ -292,10 +292,10 @@ button {
 }
 
 .contact-item {
-  border: 1px solid rgba(169, 188, 235, 0.2);
+  border: 1px solid rgba(169, 188, 235, 0.42);
   border-radius: 14px;
   padding: 14px;
-  background: rgba(10, 14, 23, 0.54);
+  background: rgba(12, 16, 27, 0.84);
 }
 
 .contact-item .label {
